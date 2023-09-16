@@ -24,7 +24,7 @@ string[] GenMas(int m)
     string[] mas = new string[m];
     for (int i = 0; i < m; i++)
     {
-        mas[i] = InsertStr($"Введите {i+1}-й элемент массива: ");
+        mas[i] = InsertStr($"Введите {i + 1}-й элемент массива: ");
     }
     return mas;
 }
@@ -39,22 +39,22 @@ string[] CutMas(string[] arr)
         }
     }
     string[] mas = new string[j];
-    if (j>0)
+    if (j > 0)
     {
         int k = 0;
         for (int i = 0; i < arr.Length; i++)
-    {
-        if (arr[i].Length < 4)
         {
-            mas[k]=arr[i];
-            k++;
+            if (arr[i].Length < 4)
+            {
+                mas[k] = arr[i];
+                k++;
+            }
         }
-    }
     }
     return mas;
 }
 int m = InsertInt("Введите количество элементов первоначального массива: ");
 string[] fullArr = GenMas(m);
-Say("Создаем массив с элементами короче 4-х символов...",true,true);
+Say("Создаем массив с элементами короче 4-х символов...", true, true);
 string[] cutArr = CutMas(fullArr);
 Say($"[{String.Join(",", fullArr)}] => [{String.Join(",", cutArr)}]");
